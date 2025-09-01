@@ -1,29 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SignButton } from "./ui/atoms/SignButton";
 
 export const Header = () => {
   return (
-    <header className="header sm:footer-horizontal bg-neutral text-neutral-content p-10 w-full">
-      <nav>
-        <Image src="/next-mart.png" alt="Next.js logo" width={180} height={100} />
-        <Link href="/about" className="link link-hover">About</Link>
-        <Link href="#" className="link link-hover">Contact</Link>
-        <Link href="#" className="link link-hover">Marketing</Link>
-        <Link href="#" className="link link-hover">Advertisement</Link>
-      </nav>
-      <nav>
-        <h6 className="header-title">Company</h6>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </nav>
-      <nav>
-        <h6 className="header-title">Legal</h6>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
+    <header className="header sm:footer-horizontal text-neutral-content p-6 w-full">
+      <nav className="flex justify-between items-center flex-2">
+        <Link href="/" className="link link-hover">
+          <Image src="/next-mart.png" alt="Next.js logo" width={180} height={100} />
+        </Link>
+        <div className="flex gap-8">
+          <Link href="#" className="link link-hover">Home</Link>
+          <Link href="#" className="link link-hover">Shop</Link>
+          <Link href="#" className="link link-hover">Categories</Link>
+          <Link href="#" className="link link-hover">Contact</Link>
+          <Link href="/about" className="link link-hover">About</Link>
+          <Link href="#" className="link link-hover">Cart</Link>
+        </div>
+        <div className="flex gap-8">
+          <SignButton link="#" text="Sign In" />
+          <SignButton link="#" text="Sign Up" />
+        </div>
       </nav>
     </header>
-  )
-}
+  );
+};
