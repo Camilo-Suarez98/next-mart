@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 interface SignButtonProps {
-  link: string;
-  text: string;
+  href: string;
+  className?: string;
+  children?: React.ReactNode;
 }
 
-export const SignButton = ({ link, text }: SignButtonProps) => {
+export const SignButton = ({ href, className, children }: SignButtonProps) => {
   return (
-    <Link href={link} className="border border-primary px-2 py-1 rounded-xl">{text}</Link>
+    <Link href={href} className={className}>{children}</Link>
   );
 };

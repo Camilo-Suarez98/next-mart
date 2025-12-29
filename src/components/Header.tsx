@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { auth } from "@/auth";
+import { SignOut } from "./auth-components";
 import { SignButton } from "./ui/atoms/SignButton";
 
-export const Header = () => {
+export const Header = async () => {
+  const session = await auth();
+
   return (
     <header className="header sm:footer-horizontal text-neutral-content p-6 w-full">
       <nav className="flex justify-between items-center flex-2">
@@ -17,9 +21,29 @@ export const Header = () => {
           <Link href="/about" className="link link-hover">About</Link>
           <Link href="#" className="link link-hover">Cart</Link>
         </div>
-        <div className="flex gap-8">
-          <SignButton link="#" text="Sign In" />
-          <SignButton link="#" text="Sign Up" />
+        <div className="flex gap-8 items-center">
+          {session?.user ? (
+            <div className="flex gap-4 items-center">
+              {session.user.image && (
+                <Image
+                  src={session.user.image}
+                  alt={session.user.name ?? "User"}
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
+              )}
+              <span>{session.user.name}</span>
+              <SignOut className="btn btn-sm btn-ghost" />
+            </div>
+          ) : (
+            <SignButton
+              href="/login"
+              className="border border-primary px-2 py-1 rounded-xl"
+            >
+              Sign In
+            </SignButton>
+          )}
         </div>
       </nav>
     </header>
