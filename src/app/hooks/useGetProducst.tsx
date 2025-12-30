@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useGetProducts = () => {
   const [products, setProducts] = useState([]);
@@ -18,5 +18,9 @@ export const useGetProducts = () => {
     }
   }
 
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return { products, loading, error, getProducts };
-}
+};

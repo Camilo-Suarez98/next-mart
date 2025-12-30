@@ -34,12 +34,12 @@ export const Header = async () => {
                 />
               )}
               <span>{session.user.name}</span>
-              <SignOut className="btn btn-sm btn-ghost" />
+              <SignOut className="btn btn-sm btn-ghost cursor-pointer" />
             </div>
           ) : (
             <SignButton
               href="/login"
-              className="border border-primary px-2 py-1 rounded-xl"
+              className="border border-primary px-2 py-1 rounded-xl cursor-pointer"
             >
               Sign In
             </SignButton>
