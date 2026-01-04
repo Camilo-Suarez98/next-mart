@@ -24,17 +24,19 @@ export const Header = async () => {
         <div className="flex gap-8 items-center">
           {session?.user ? (
             <div className="flex gap-4 items-center">
-              {session.user.image && (
-                <Image
-                  src={session.user.image}
-                  alt={session.user.name ?? "User"}
-                  width={32}
-                  height={32}
-                  className="rounded-full"
-                />
-              )}
-              <span>{session.user.name}</span>
-              <SignOut className="btn btn-sm btn-ghost cursor-pointer" />
+              <div className="flex gap-2 justify-center items-center">
+                {session.user.image && (
+                  <Image
+                    src={session.user.image}
+                    alt={session.user.name ?? "User"}
+                    width={32}
+                    height={32}
+                    className="rounded-full"
+                  />
+                )}
+                <span>{session.user.name}</span>
+              </div>
+              <SignOut className="border border-primary px-2 py-1 rounded-xl cursor-pointer" />
             </div>
           ) : (
             <SignButton
