@@ -26,6 +26,7 @@ export default function Home() {
             title={product.title}
             image={product.image}
             price={product.price}
+            rating={product.rating}
           />
         ))}
       </main>

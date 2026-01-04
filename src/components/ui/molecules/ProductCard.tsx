@@ -1,29 +1,38 @@
 import Image from "next/image";
 import { ProductCardProps } from "@/types/product.type";
+import { Star } from "@deemlol/next-icons";
 
 export const ProductCard = ({
   id,
   title,
   image,
   price,
+  rating,
 }: ProductCardProps) => {
   return (
-    <section className="bg-base-100 w-96 shadow-sm p-4">
-      <div className="card">
-        <figure>
+    <section className="bg-base-100 w-96 shadow-md rounded-2xl hover:shadow-lg transition-all">
+      <div className="flex flex-col">
+        <figure className="flex justify-center items-center p-4 bg-[#0000000a]">
           <Image
             src={image}
-            className="w-24 h-24 object-contain"
+            className="object-contain w-48 h-48"
             alt={`${title} image`}
-            width={100}
-            height={100}
+            height={250}
+            width={250}
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title text-lg font-bold leading-normal">{title}</h2>
-          <p className="text-lg font-bold">${price}</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+        <div className="p-4">
+          <h2 className="text-base h-10 leading-tight mb-3">{title}</h2>
+          <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-1">
+              <Star size={12} color="blue" />
+              <span>{rating?.rate}</span>
+            </div>
+            <span>({rating?.count})</span>
+          </div>
+          <p className="text-xl font-bold">${price}</p>
+          <div className="justify-end">
+            <button>Buy Now</button>
           </div>
         </div>
       </div>
