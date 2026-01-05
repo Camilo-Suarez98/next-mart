@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="font-sans flex items-center justify-center h-full p-8 pb-10 sm:p-4">
+    <div className="font-sans flex items-center justify-center h-full p-6 pb-10">
       <main className="flex flex-wrap justify-center items-center gap-6 sm:items-start">
         {products.map((product) => (
           <ProductCard
