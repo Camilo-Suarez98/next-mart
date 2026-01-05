@@ -1,4 +1,5 @@
-import { signIn, signOut } from "@/auth"
+import { signIn, signOut } from "@/auth";
+import { LogOut } from "@deemlol/next-icons";
 
 export function SignIn({
   provider,
@@ -27,8 +28,9 @@ export function SignOut({
         "use server"
         await signOut()
       }}
+      className="h-[30px]"
     >
-      <button {...props}>{children || "Sign Out"}</button>
+      <button {...props}>{children || <LogOut size={24} />}</button>
     </form>
   )
 }
