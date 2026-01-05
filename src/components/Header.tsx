@@ -3,6 +3,7 @@ import Image from "next/image";
 import { auth } from "@/auth";
 import { SignOut } from "./auth-components";
 import { SignButton } from "./ui/atoms/SignButton";
+import { LogIn } from "@deemlol/next-icons";
 
 export const Header = async () => {
   const session = await auth();
@@ -29,21 +30,20 @@ export const Header = async () => {
                   <Image
                     src={session.user.image}
                     alt={session.user.name ?? "User"}
-                    width={32}
-                    height={32}
+                    width={24}
+                    height={24}
                     className="rounded-full"
                   />
                 )}
-                <span>{session.user.name}</span>
               </div>
-              <SignOut className="border border-primary px-2 py-1 rounded-xl cursor-pointer" />
+              <SignOut className="cursor-pointer" />
             </div>
           ) : (
             <SignButton
               href="/login"
-              className="border border-primary px-2 py-1 rounded-xl cursor-pointer"
+              className="border border-primary p-2 rounded-full cursor-pointer"
             >
-              Sign In
+              <LogIn size={24} />
             </SignButton>
           )}
         </div>
