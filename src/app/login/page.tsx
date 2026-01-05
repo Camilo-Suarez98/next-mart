@@ -1,5 +1,5 @@
 import { SignIn } from "@/components/auth-components";
-import { FaGoogle } from "react-icons/fa";
+import { Google } from "@deemlol/next-icons";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
@@ -17,10 +17,10 @@ export default async function LoginPage() {
           <div className="flex flex-col gap-4">
             <SignIn
               provider="google"
-              className="border border-primary px-2 py-1 rounded-xl w-full text-lg flex justify-center place-items-center gap-2 cursor-pointer"
+              className="border border-primary px-2 py-1 rounded-xl w-full text-lg flex justify-center place-items-center gap-1 cursor-pointer"
             >
               Sign in with Google
-              <FaGoogle size={18} />
+              <Google size={18} />
             </SignIn>
           </div>
         </div>
