@@ -9,6 +9,8 @@ export const ProductCard = ({
   price,
   rating,
 }: ProductCardProps) => {
+  const starCount = Math.round(rating?.rate || 0);
+
   return (
     <section className="bg-base-100 w-96 shadow-md rounded-2xl hover:shadow-lg transition-all">
       <div className="flex flex-col">
@@ -22,11 +24,17 @@ export const ProductCard = ({
           />
         </figure>
         <div className="p-4">
-          <h2 className="text-base h-10 leading-tight mb-3">{title}</h2>
+          <h2 className="text-base h-10 leading-tight mb-1">{title}</h2>
           <div className="flex items-center gap-2 text-sm">
             <div className="flex items-center gap-1">
-              <Star size={12} color="blue" />
-              <span>{rating?.rate}</span>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <Star
+                  key={index}
+                  size={14}
+                  color="#facc15"
+                  fill={index < starCount ? "#facc15" : "none"}
+                />
+              ))}
             </div>
             <span>({rating?.count})</span>
           </div>
