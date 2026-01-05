@@ -1,5 +1,7 @@
-import { signIn, signOut } from "@/auth";
+"use client";
+
 import { LogOut } from "@deemlol/next-icons";
+import { handleSignIn, handleSignOut } from "@/app/actions/auth-actions";
 
 export function SignIn({
   provider,
@@ -9,8 +11,7 @@ export function SignIn({
   return (
     <form
       action={async () => {
-        "use server"
-        await signIn(provider)
+        await handleSignIn(provider)
       }}
     >
       <button {...props}>{children || "Sign In"}</button>
@@ -25,8 +26,7 @@ export function SignOut({
   return (
     <form
       action={async () => {
-        "use server"
-        await signOut()
+        await handleSignOut()
       }}
       className="h-[30px]"
     >

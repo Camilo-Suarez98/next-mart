@@ -4,10 +4,11 @@ interface SignButtonProps {
   href: string;
   className?: string;
   children?: React.ReactNode;
+  onClick?: () => void;
 }
 
-export const SignButton = ({ href, className, children }: SignButtonProps) => {
+export const SignButton = ({ href, className, children, onClick }: SignButtonProps) => {
   return (
-    <Link href={href} className={className}>{children}</Link>
+    <Link href={href} className={className} onClick={onClick}>{children}</Link>
   );
 };

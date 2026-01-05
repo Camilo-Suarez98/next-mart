@@ -12,7 +12,7 @@ export const ProductCard = ({
   const starCount = Math.round(rating?.rate || 0);
 
   return (
-    <section className="bg-base-100 w-96 shadow-md rounded-2xl hover:shadow-lg transition-all">
+    <section className="bg-base-100 w-full shadow-md rounded-2xl hover:shadow-lg transition-all sm:w-96">
       <div className="flex flex-col">
         <figure className="flex justify-center items-center p-4 bg-[#0000000a]">
           <Image
