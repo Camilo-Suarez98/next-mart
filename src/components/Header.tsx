@@ -16,7 +16,7 @@ export const Header = async () => {
           <Image src="/next-mart.png" alt="Next.js logo" width={180} height={100} />
         </Link>
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-12">
           <div className="gap-8 hidden md:flex">
             <Link href="/" className="link link-hover">Home</Link>
             <Link href="#" className="link link-hover">Shop</Link>
