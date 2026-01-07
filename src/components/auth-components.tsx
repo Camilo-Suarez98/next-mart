@@ -28,7 +28,7 @@ export function SignOut({
       action={async () => {
         await handleSignOut()
       }}
-      className="h-[30px]"
+      className="h-[24px]"
     >
       <button {...props}>{children || <LogOut size={24} />}</button>
     </form>

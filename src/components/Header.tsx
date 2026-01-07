@@ -10,10 +10,16 @@ export const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="header sm:footer-horizontal text-neutral-content p-6 w-full">
+    <header className="header sm:footer-horizontal text-neutral-content pb-10 w-full">
       <nav className="flex justify-between items-center">
         <Link href="/" className="link link-hover">
-          <Image src="/next-mart.png" alt="Next.js logo" width={180} height={100} />
+          <Image
+            src="/next-mart.png"
+            alt="Next.js logo"
+            className="w-36 md:w-48"
+            width={180}
+            height={100}
+          />
         </Link>
 
         <div className="flex justify-between items-center gap-12">
